@@ -1,0 +1,38 @@
+body{
+    box-sizing: border-box;
+}
+
+#profile-background{
+    height: 400px;
+}
+#profile-background img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#info-picture{
+    border-radius: 50%;
+    margin-left: 5%;
+    margin-top: -7.5%;
+    width: 12.5%;
+    height: 12.5%;
+}
+#info-data{
+    display: flex;
+    margin-left: 5%;
+}
+#info-links{
+    margin-left: auto;
+    margin-right: 5%;
+    align-self: center;
+    width: 250px;
+}
+
+.experiencias li{
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}
+.experiencias img{
+    width: 75%;
+}
