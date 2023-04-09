@@ -1,0 +1,46 @@
+#profile-background{
+    height: 400px;
+}
+#profile-background img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#info-picture{
+    border-radius: 50%;
+    margin-left: 5%;
+    margin-top: -7.5%;
+    width: 12.5%;
+    height: 12.5%;
+}
+#info-data{
+    display: flex;
+    margin-left: 5%;
+    /* color:white; */
+}
+#info-links{
+    margin-left: auto;
+    margin-right: 5%;
+    align-self: center;
+    max-width: 250px;
+}
+
+/* Info-Data */
+@media (max-width: 820px) { 
+    #info{
+        text-align: center;
+    }
+    #info-picture{
+        margin: auto;
+        margin-top: -7.5%;
+        min-width: 100px;
+    }
+    #info-data {
+        display: block;
+        margin: auto;
+    }
+    #info-links{
+        margin:auto;
+    }
+}

@@ -1,0 +1,17 @@
+.experiencias ul{
+    list-style-type: none;
+}
+.experiencias li{
+    display: grid;
+    grid-template-columns: fit-content(20%) 1fr;
+}
+.experiencias img{
+    max-width: 75;
+}
+
+/* Experiencias */
+@media (max-width: 540px) { 
+    .experiencias li {
+        grid-template-columns: fit-content(100%);
+    }
+}
