@@ -1,34 +1,34 @@
 {
-    "header_logo_arg_programa": "https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/logoArgentinaPrograma.png?token=GHSAT0AAAAAAB7Y5SG3UPO6MCWJGOS6PR6SZBTF26A",
+    "header_logo_arg_programa": "https://i.postimg.cc/vBxT7K2s/logo-arg-programa.png",
     "header_title": "PORTFOLIO WEB",
-    "profile_background":"https://github.com/Turp2703/portfolio-FrontEnd/blob/main/portfolio-FrontEnd/src/assets/img/profile-background.jpg?raw=true",
-    "profile_info_picture":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/info-picture.png?token=GHSAT0AAAAAAB7Y5SG37GHU4KQX2HSJVAHQZBTF3KA",
+    "profile_background":"https://i.postimg.cc/WzM4CkPY/profile-background.jpg",
+    "profile_info_picture":"https://i.postimg.cc/c1Y6rV87/info-picture.png",
     "profile_info_name":"Rueda, Tomás",
     "profile_info_situation":"Estudiante de Ingenieria en Sistemas de Información",
     "profile_info_location":"Bahía Blanca, Buenos Aires (Argentina)",
-    "profile_logo_uns":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/logo-uns.png?token=GHSAT0AAAAAAB7Y5SG2ZBJ353MNBL3XXNOCZBTF3LQ",
+    "profile_logo_uns":"https://i.postimg.cc/zB4L9NHv/logo-uns.png",
     "acercade_data":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem consectetur ducimus, sapiente aliquid voluptatem nisi. Facilis ab eius ducimus ut tempora eaque quam provident illo repellat. Itaque asperiores hic nam!",
-    "experiencia_logo":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/logo-penna.png?token=GHSAT0AAAAAAB7Y5SG2X2OAYUIUSYW7GGL4ZBTF3LA",
+    "experiencia_logo":"https://i.postimg.cc/GphsDq1L/logo-penna.png",
     "experiencia_name":"Servicio Técnico",
     "experiencia_place":"Hospital Interzonal Dr. José Penna (2022)",
     "educacion":[
         {
-            "picture":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/edu_titulo_informatica.png?token=GHSAT0AAAAAAB7Y5SG3CB3WPLTEF4AK2LBUZBTF3JA",
+            "picture":"https://i.postimg.cc/ZnkRwLXy/edu-titulo-informatica.png",
             "title":"Título: Técnico en Informática Personal y Profesional",
             "origin":"Escuela de Educación Secundaria Técnica N°2"
         },
         {
-            "picture":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/edu_certificado_seprogramar.png?token=GHSAT0AAAAAAB7Y5SG23L5JNFI3UXNZTP4AZBTF3HQ",
+            "picture":"https://i.postimg.cc/fTntCwhg/edu-certificado-seprogramar.png",
             "title":"Certificado: SeProgramar",
             "origin":"1ra etapa de Argentina Programa"
         },
         {
-            "picture":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/edu_certificado_sololearn_cpp.png?token=GHSAT0AAAAAAB7Y5SG3GR2PYETJ6XEIBUYKZBTF3IA",
+            "picture":"https://i.postimg.cc/05JK7zhw/edu-certificado-sololearn-cpp.png",
             "title":"Certificado: C++ SoloLearn",
             "origin":"Plataforma SoloLearn conocimientos teoricos y practicos"
         },
         {
-            "picture":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/edu_certificado_sololearn_cs.png?token=GHSAT0AAAAAAB7Y5SG362N326E4PXYDI7ZAZBTF3IQ",
+            "picture":"https://i.postimg.cc/PqRNwH4y/edu-certificado-sololearn-cs.png",
             "title":"Certificado: C# SoloLearn",
             "origin":"Plataforma SoloLearn conocimientos teoricos y practicos"
         }
@@ -36,53 +36,53 @@
     "skills":[
         {
             "name":"C++",
-            "percentage":85
+            "percentage":"85"
         },
         {
             "name":"C#",
-            "percentage":80
+            "percentage":"80"
         },
         {
             "name":"Pascal",
-            "percentage":70
+            "percentage":"70"
         },
         {
             "name":"Java",
-            "percentage":70
+            "percentage":"70"
         },
         {
             "name":"JavaScript & TypeScript",
-            "percentage":70
+            "percentage":"70"
         },
         {
             "name":"HTML & CSS",
-            "percentage":60
+            "percentage":"60"
         },
         {
             "name":"Hardware",
-            "percentage":50
+            "percentage":"50"
         },
         {
             "name":"Networking",
-            "percentage":98
+            "percentage":"98"
         },
         {
             "name":"Inglés",
-            "percentage":75
+            "percentage":"75"
         },
         {
             "name":"Comunicación",
-            "percentage":60
+            "percentage":"60"
         }
     ],
     "proyectos":[
         {
-            "picture":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/proyecto_inmobiliaria.png?token=GHSAT0AAAAAAB7Y5SG2X65BONGFCPW3UI5OZBTF3SA",
+            "picture":"https://i.postimg.cc/Dzj4PL2q/proyecto-inmobiliaria.png",
             "name":"Sistema de Gestión de Inmobiliarias",
             "description":"Proyecto final para recibirme de técnico, hecho en C#"
         },
         {
-            "picture":"https://raw.githubusercontent.com/Turp2703/portfolio-FrontEnd/main/portfolio-FrontEnd/src/assets/img/proyecto_typer.png?token=GHSAT0AAAAAAB7Y5SG27HY36WMAGXMK4JMCZBTF3SQ",
+            "picture":"https://i.postimg.cc/Cx4qd9Xr/proyecto-typer.png",
             "name":"Typer, juego de Mecanografía",
             "description":"Evaluacion final para aprobar 4to año de informatica, hecho en Pascal"
         }

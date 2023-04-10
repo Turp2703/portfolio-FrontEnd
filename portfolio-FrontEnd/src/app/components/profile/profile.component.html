@@ -1,21 +1,21 @@
 <section id="Perfil" class="m-5 mt-4">
     <div class="card">
         <div id="profile-background">
-            <img class="img-fluid" src="../../../assets/img/profile-background.jpg" alt="(profile-background)">
+            <img class="img-fluid" [src]="profile_background" alt="(profile-background)">
         </div>
         <div id="info" class="pb-3">
             <div id="info-picture">
-                <img class="img-fluid" src="../../../assets/img/info-picture.png" alt="(info-picture)">
+                <img class="img-fluid" [src]="profile_info_picture" alt="(info-picture)">
                 <div class="btn-edit"><a href="#"><i class="fa fa-pencil"></i></a></div>
             </div>
             <div id="info-data">
                 <div>
-                    <h1>Rueda, Tomás</h1>
-                    <b>Estudiante de Ingenieria en Sistemas de Información</b>
-                    <p>Bahía Blanca, Buenos Aires (Argentina)</p>
+                    <h1>{{profile_info_name}}</h1>
+                    <b>{{profile_info_situation}}</b>
+                    <p>{{profile_info_location}}</p>
                 </div>
                 <div id="info-links">
-                    <a href="https://www.uns.edu.ar" target="_blank"><img class="img-fluid" src="assets/img/logo-uns.png"></a>
+                    <a href="https://www.uns.edu.ar" target="_blank"><img class="img-fluid" [src]="profile_logo_uns"></a>
                 </div>
             </div>
         </div>

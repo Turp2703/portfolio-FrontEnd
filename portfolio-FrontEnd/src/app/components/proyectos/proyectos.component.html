@@ -2,20 +2,12 @@
     <div class="container-flex p-3">
         <div class="row p-0">
             <h2 class="titulo">Proyectos</h2>
-            <div class="col-md-12 col-lg-6">
+            <div class="col-md-12 col-lg-6" *ngFor="let proyecto of proyectosList">
                 <div class="btn-edit">
-                    <img src="../../../assets/img/proyecto_inmobiliaria.png" class="img-thumbnail" alt="Sistema Inmobiliaria">
+                    <img [src]="proyecto.picture" class="img-thumbnail" [alt]="proyecto.name">
                     <a href="#" class="btn-right"><i class="fa fa-pencil"></i></a>
-                    <h5>Sistema de Gestión de Inmobiliarias</h5>
-                    <p>Proyecto final para recibirme de técnico, hecho en C#.</p>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-6">
-                <div class="btn-edit">
-                    <img src="../../../assets/img/proyecto_typer.png" class="img-thumbnail" alt="Juego Typer">
-                    <a href="#" class="btn-right"><i class="fa fa-pencil"></i></a>
-                    <h5>Typer, juego de Mecanografía</h5>
-                    <p>Evaluacion final para aprobar 4to año de informatica, hecho en Pascal.</p>
+                    <h5>{{proyecto.name}}</h5>
+                    <p>{{proyecto.description}}</p>
                 </div>
             </div>
         </div>
