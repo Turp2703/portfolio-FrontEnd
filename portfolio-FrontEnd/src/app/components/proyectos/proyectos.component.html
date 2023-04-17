@@ -3,12 +3,9 @@
         <div class="row p-0 justify-content-center">
             <h2 class="titulo">Proyectos</h2>
             <div class="col-md-12 col-lg-6 text-center" *ngFor="let proyecto of proyectosList">
-                <div class="btn-edit">
-                    <img [src]="proyecto.picture" class="img-thumbnail" [alt]="proyecto.name">
-                    <a href="#" class="btn-right"><i class="fa fa-pencil"></i></a>
-                    <h5>{{proyecto.name}}</h5>
-                    <p>{{proyecto.description}}</p>
-                </div>
+                <img [src]="proyecto.picture" class="img-thumbnail" [alt]="proyecto.name">
+                <h5>{{proyecto.name}}</h5>
+                <p>{{proyecto.description}}</p>
             </div>
         </div>
     </div>
