@@ -18,7 +18,7 @@
             "origin":"Escuela de Educación Secundaria Técnica N°2"
         },
         {
-            "picture":"https://i.postimg.cc/fTntCwhg/edu-certificado-seprogramar.png",
+            "picture":"https://i.postimg.cc/wTTzxG3m/edu-certificado-seprogramar.png",
             "title":"Certificado: SeProgramar",
             "origin":"1ra etapa de Argentina Programa"
         },
@@ -31,6 +31,11 @@
             "picture":"https://i.postimg.cc/PqRNwH4y/edu-certificado-sololearn-cs.png",
             "title":"Certificado: C# SoloLearn",
             "origin":"Plataforma SoloLearn conocimientos teoricos y practicos"
+        },
+        {
+            "picture":"https://i.postimg.cc/ZnkRwLXy/edu-titulo-informatica.png",
+            "title":"Título: Extra Test",
+            "origin": "Extra Prueba"
         }
     ],
     "skills":[
@@ -73,6 +78,10 @@
         {
             "name":"Comunicación",
             "percentage":"60"
+        },
+        {
+            "name": "Extra - Test",
+            "percentage":"50"
         }
     ],
     "proyectos":[
@@ -85,6 +94,11 @@
             "picture":"https://i.postimg.cc/Cx4qd9Xr/proyecto-typer.png",
             "name":"Typer, juego de Mecanografía",
             "description":"Evaluacion final para aprobar 4to año de informatica, hecho en Pascal"
+        },
+        {
+            "picture":"https://i.postimg.cc/ZnkRwLXy/edu-titulo-informatica.png",
+            "name":"Extra, Test",
+            "description":"Extra, Prueba"
         }
     ],
     "footer_name":"Rueda, Tomás",
