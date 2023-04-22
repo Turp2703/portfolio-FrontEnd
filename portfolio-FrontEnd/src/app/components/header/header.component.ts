@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { HeaderService } from 'src/app/services/header.service';
+import { mHeader } from 'src/app/model/header.model';
 
 @Component({
   selector: 'app-header',
@@ -7,16 +8,14 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-  header_logo_arg_programa: any;
-  header_title: any;
+  header: mHeader = new mHeader("","");
 
-  constructor(private portfolioData:PortfolioService) { }
+  constructor(private headerService: HeaderService) { }
   
   ngOnInit(): void {
-    this.portfolioData.obtenerDatos().subscribe(data =>{
-      this.header_logo_arg_programa = data.header_logo_arg_programa;
-      this.header_title = data.header_title;
-    });
+    this.headerService.getHeader().subscribe(data => {
+      this.header = data;
+    })
   }
 
 }
