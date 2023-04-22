@@ -1,16 +1,21 @@
 {
+
     "header_logo_arg_programa": "https://i.postimg.cc/vBxT7K2s/logo-arg-programa.png",
     "header_title": "PORTFOLIO WEB",
+
     "profile_background":"https://i.postimg.cc/WzM4CkPY/profile-background.jpg",
     "profile_info_picture":"https://i.postimg.cc/c1Y6rV87/info-picture.png",
     "profile_info_name":"Rueda, Tomás",
     "profile_info_situation":"Estudiante de Ingenieria en Sistemas de Información",
     "profile_info_location":"Bahía Blanca, Buenos Aires (Argentina)",
     "profile_logo_uns":"https://i.postimg.cc/zB4L9NHv/logo-uns.png",
+    
     "acercade_data":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem consectetur ducimus, sapiente aliquid voluptatem nisi. Facilis ab eius ducimus ut tempora eaque quam provident illo repellat. Itaque asperiores hic nam!",
+    
     "experiencia_logo":"https://i.postimg.cc/GphsDq1L/logo-penna.png",
     "experiencia_name":"Servicio Técnico",
     "experiencia_place":"Hospital Interzonal Dr. José Penna (2022)",
+   
     "educacion":[
         {
             "picture":"https://i.postimg.cc/ZnkRwLXy/edu-titulo-informatica.png",
@@ -38,6 +43,7 @@
             "origin": "Extra Prueba"
         }
     ],
+
     "skills":[
         {
             "name":"C++",
@@ -84,6 +90,7 @@
             "percentage":"50"
         }
     ],
+
     "proyectos":[
         {
             "picture":"https://i.postimg.cc/Dzj4PL2q/proyecto-inmobiliaria.png",
@@ -101,6 +108,8 @@
             "description":"Extra, Prueba"
         }
     ],
+
     "footer_name":"Rueda, Tomás",
     "footer_copyright":"© Argentina Programa 2023"
+    
 }

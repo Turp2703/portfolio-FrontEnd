@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { ProfileService } from 'src/app/services/profile.service';
+import { mProfile } from 'src/app/model/profile.model';
 
 @Component({
   selector: 'app-profile',
@@ -7,23 +8,13 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
-  profile_background: any;
-  profile_info_picture: any;
-  profile_info_name: any;
-  profile_info_situation: any;
-  profile_info_location: any;
-  profile_logo_uns: any;
+  profile: mProfile = new mProfile("","","","","","");
 
-  constructor(private portfolioData:PortfolioService) { }
+  constructor(private profileService: ProfileService) { }
   
   ngOnInit(): void {
-    this.portfolioData.obtenerDatos().subscribe(data =>{
-      this.profile_background = data.profile_background;
-      this.profile_info_picture = data.profile_info_picture;
-      this.profile_info_name = data.profile_info_name;
-      this.profile_info_situation = data.profile_info_situation;
-      this.profile_info_location = data.profile_info_location;
-      this.profile_logo_uns = data.profile_logo_uns;
-    });
+    this.profileService.getProfile().subscribe(data => {
+      this.profile = data;
+    })
   }
 }
