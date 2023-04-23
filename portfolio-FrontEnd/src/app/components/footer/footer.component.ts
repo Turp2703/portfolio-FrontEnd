@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { mFooter } from 'src/app/model/footer.model';
+import { FooterService } from 'src/app/services/footer.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,16 +8,13 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit{
-  footer_name: any;
-  footer_copyright: any;
+  footer: mFooter = new mFooter("","");
 
-  constructor(private portfolioData:PortfolioService) { }
+  constructor(private footerService: FooterService) { }
   
   ngOnInit(): void {
-    this.portfolioData.obtenerDatos().subscribe(data =>{
-      this.footer_name = data.footer_name;
-      this.footer_copyright = data.footer_copyright;
-    });
+    this.footerService.getFooter().subscribe(data => {
+      this.footer = data;
+    })
   }
-
 }
