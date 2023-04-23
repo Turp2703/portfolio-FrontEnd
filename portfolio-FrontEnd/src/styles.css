@@ -8,7 +8,7 @@ body{
     /* color: white; */
 }
 
-section,.header,.footer{
+section,.header,.footer,.form{
     border: solid yellow 2px;
 }
 

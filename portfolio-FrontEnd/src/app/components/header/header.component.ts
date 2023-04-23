@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from 'src/app/services/header.service';
 import { mHeader } from 'src/app/model/header.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,16 @@ import { mHeader } from 'src/app/model/header.model';
 export class HeaderComponent implements OnInit{
   header: mHeader = new mHeader("","");
 
-  constructor(private headerService: HeaderService) { }
+  constructor(private headerService: HeaderService, private router: Router) { }
   
   ngOnInit(): void {
     this.headerService.getHeader().subscribe(data => {
       this.header = data;
     })
+  }
+
+  login(){
+    this.router.navigate(['/login'])
   }
 
 }
