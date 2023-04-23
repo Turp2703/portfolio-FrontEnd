@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { SkillsService } from 'src/app/services/skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,11 +9,11 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class SkillsComponent implements OnInit{
   skillsList: any;
 
-  constructor(private portfolioData:PortfolioService) { }
+  constructor(private skillService: SkillsService) { }
   
   ngOnInit(): void {
-    this.portfolioData.obtenerDatos().subscribe(data =>{
-      this.skillsList = data.skills;
-    });
+    this.skillService.getSkillList().subscribe(data => {
+      this.skillsList = data;
+    })
   }
 }

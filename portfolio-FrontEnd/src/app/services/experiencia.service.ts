@@ -7,7 +7,6 @@ import { mExperiencia } from '../model/experiencia.model';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  
 
   URL = 'http://localhost:8080/experiencia/';
 
