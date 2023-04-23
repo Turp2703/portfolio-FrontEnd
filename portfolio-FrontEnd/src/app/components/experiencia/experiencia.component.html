@@ -1,16 +1,36 @@
 <div class="p-3 h-100">
-    <div>
-        <h2>Experiencia</h2>
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <h2>Experiencia</h2>
+        </div>
+        <div class="col-12 col-sm-6 text-end">
+            <a class="btn btn-secondary mx-1" href="#carouselExperiencias" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="btn btn-secondary mx-1" href="#carouselExperiencias" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
     </div>
-    <div class="experiencias mt-4">
-        <ul class="m-0 p-0">
-            <li>
-                <img class="img-fluid" [src]="experiencia_logo" [alt]="experiencia_place">
-                <div class="mx-3">
-                    <h4>{{experiencia_name}}</h4>
-                    <p>{{experiencia_place}}</p>
-                </div>
-            </li>
-        </ul>
+    <div class="experiencias mt-5">
+        <div id="carouselExperiencias" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+              <div *ngFor="let experiencia of experienciasList">
+                  <div class='carousel-item' [ngClass]="{'active' : experiencia.id === 1}">
+                    <ul class="m-0 p-0 ulExp">
+                        <li class="liExp">
+                            <img class="img-fluid" [src]="experiencia.logo" [alt]="experiencia.place">
+                            <div class="mx-3">
+                                <h4>{{experiencia.name}}</h4>
+                                <p>{{experiencia.place}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                  </div>
+              </div>
+
+            </div>
+        </div>
     </div>
 </div>

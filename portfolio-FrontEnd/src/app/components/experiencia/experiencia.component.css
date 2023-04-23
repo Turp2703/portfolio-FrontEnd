@@ -1,7 +1,7 @@
-.experiencias ul{
+.ulExp{
     list-style-type: none;
 }
-.experiencias li{
+.liExp{
     display: grid;
     grid-template-columns: fit-content(20%) 1fr;
 }
