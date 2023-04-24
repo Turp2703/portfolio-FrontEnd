@@ -9,7 +9,8 @@
             <h2>{{header.title}}</h2>
         </div>
         <div class="col-lg text-center text-lg-end p-0 pt-1">
-            <button class="btn btn-outline-warning" (click)="login()">Log In</button>
+            <button class="btn btn-outline-warning" (click)="logIn()" *ngIf="!isLogged">Log In</button>
+            <button class="btn btn-outline-warning" (click)="logOut()" *ngIf="isLogged">Log Out</button>
         </div>
     </div>
 </header>
