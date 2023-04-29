@@ -1,14 +1,77 @@
 <section id="Skills" class="m-5 mt-4">
     <div class="container-flex p-3">
         <div class="row justify-content-center">
-            <h2 class="titulo">Hard Skills | Soft Skills</h2>
+            <h2 class="titulo">Hard Skills | Soft Skills
+                <a class="btn btn-primary mx-1 text-white end" role="button" data-bs-toggle="modal" data-bs-target="#modalPostSkill" *ngIf="isLogged">
+                    AÑADIR
+                </a>
+            </h2>
             <div class="col-md-12 col-lg-6 pt-3" *ngFor="let skill of skillsList">
-                <h4>{{skill.name}}</h4>
+                <h4>{{skill.name}}
+                    <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutSkill" (click)="putIndex(skill.id)" *ngIf="isLogged">
+                        EDITAR
+                    </a>
+                    <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(skill.id)" *ngIf="isLogged">
+                        BORRAR
+                    </a>
+                </h4>
                 <div class="progress">
-                    <div class="progress-bar bg-warning" role="progressbar" [style.width.%]="skill.percentage"></div>
+                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" [style.width.%]="skill.percentage"></div>
                 </div>
                 <br>
             </div>
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="modalPostSkill" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nueva Skill</h5>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+              <div class="form-group">
+                <label for="skillName" class="col-form-label">Nombre:</label>
+                <input type="text" class="form-control" id="skillName" name="skillName" [(ngModel)]="skillPost.name" required>
+              </div>
+              <div class="form-group">
+                <label for="skillPercentage" class="col-form-label">Porcentaje (0-100):</label>
+                <input type="number" min="0" max="100" class="form-control" id="skillPercentage" name="skillPercentage" [(ngModel)]="skillPost.percentage" required>
+              </div>
+              <div class="text-end mt-3">
+                <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary mx-1">Añadir Skill</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalPutSkill" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Skill</h5>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="skillName" class="col-form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="skillName" name="skillName" [(ngModel)]="skillPut.name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="skillPercentage" class="col-form-label">Porcentaje (0-100):</label>
+                    <input type="number" min="0" max="100" class="form-control" id="skillPercentage" name="skillPercentage" [(ngModel)]="skillPut.percentage" required>
+                  </div>
+              <div class="text-end mt-3">
+                <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary mx-1">Confirmar Cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
