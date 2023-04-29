@@ -1,9 +1,12 @@
 <div class="p-3 h-100">
     <div class="row">
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-5">
             <h2>Experiencia</h2>
         </div>
-        <div class="col-12 col-sm-6 text-end">
+        <div class="col-12 col-sm-7 text-end">
+            <a class="btn btn-primary mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPost" *ngIf="isLogged">
+                AÑADIR
+            </a>
             <a class="btn btn-secondary mx-1" href="#carouselExperiencias" role="button" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </a>
@@ -24,6 +27,12 @@
                             <div class="mx-3">
                                 <h4>{{experiencia.name}}</h4>
                                 <p>{{experiencia.place}}</p>
+                                <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPut" (click)="putIndex(experiencia.id)" *ngIf="isLogged">
+                                    EDITAR
+                                </a>
+                                <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(experiencia.id)" *ngIf="isLogged">
+                                    BORRAR
+                                </a>
                             </div>
                         </li>
                     </ul>
@@ -34,3 +43,63 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nueva Experiencia</h5>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+              <div class="form-group">
+                <label for="expLogo" class="col-form-label">Logo (link):</label>
+                <input type="text" class="form-control" id="expLogo" name="expLogo" [(ngModel)]="expPost.logo" required>
+              </div>
+              <div class="form-group">
+                <label for="expName" class="col-form-label">Nombre:</label>
+                <input type="text" class="form-control" id="expName" name="expName" [(ngModel)]="expPost.name" required>
+              </div>
+              <div class="form-group">
+                <label for="expPlace" class="col-form-label">Lugar:</label>
+                <input type="text" class="form-control" id="expPlace" name="expPlace" [(ngModel)]="expPost.place" required>
+              </div>
+              <div class="text-end mt-3">
+                <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary mx-1">Añadir Experiencia</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalPut" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Experiencia</h5>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+              <div class="form-group">
+                <label for="expLogo" class="col-form-label">Logo (link):</label>
+                <input type="text" class="form-control" id="expLogo" name="expLogo" [(ngModel)]="expPut.logo" required>
+              </div>
+              <div class="form-group">
+                <label for="expName" class="col-form-label">Nombre:</label>
+                <input type="text" class="form-control" id="expName" name="expName" [(ngModel)]="expPut.name" required>
+              </div>
+              <div class="form-group">
+                <label for="expPlace" class="col-form-label">Lugar:</label>
+                <input type="text" class="form-control" id="expPlace" name="expPlace" [(ngModel)]="expPut.place" required>
+              </div>
+              <div class="text-end mt-3">
+                <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary mx-1">Confirmar Cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>

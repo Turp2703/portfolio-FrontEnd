@@ -8,11 +8,11 @@ body{
     /* color: white; */
 }
 
-section,.header,.footer,.form{
+section, .header, .footer, .form, .modal-content{
     border: solid yellow 2px;
 }
 
-div{
+div:not(.modal, .modal-dialog){
     background-color: rgb(37, 0, 48);
     color: white;
 }
