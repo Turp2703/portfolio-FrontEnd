@@ -1,12 +1,82 @@
 <section id="Proyectos" class="m-5 mt-4">
     <div class="container-flex p-3">
         <div class="row p-0 justify-content-center">
-            <h2 class="titulo">Proyectos</h2>
-            <div class="col-md-12 col-lg-6 text-center" *ngFor="let proyecto of proyectosList">
+            <h2 class="titulo">Proyectos
+                <a class="btn btn-primary mx-1 text-white end" role="button" data-bs-toggle="modal" data-bs-target="#modalPostProy" *ngIf="isLogged">
+                    AÑADIR
+                </a>
+            </h2>
+            <div class="col-md-12 col-lg-6 mt-3 text-center" *ngFor="let proyecto of proyectosList">
                 <img [src]="proyecto.picture" class="img-thumbnail" [alt]="proyecto.name">
                 <h5>{{proyecto.name}}</h5>
                 <p>{{proyecto.description}}</p>
+                <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutProy" (click)="putIndex(proyecto.id)" *ngIf="isLogged">
+                    EDITAR
+                </a>
+                <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(proyecto.id)" *ngIf="isLogged">
+                    BORRAR
+                </a>
             </div>
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="modalPostProy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nuevo Proyecto</h5>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+              <div class="form-group">
+                <label for="proyPicture" class="col-form-label">Imagen (link):</label>
+                <input type="text" class="form-control" id="proyPicture" name="proyPicture" [(ngModel)]="proyPost.picture" required>
+              </div>
+              <div class="form-group">
+                <label for="proyName" class="col-form-label">Nombre:</label>
+                <input type="text" class="form-control" id="proyName" name="proyName" [(ngModel)]="proyPost.name" required>
+              </div>
+              <div class="form-group">
+                <label for="proyDesc" class="col-form-label">Descripción:</label>
+                <input type="text" class="form-control" id="proyDesc" name="proyDesc" [(ngModel)]="proyPost.description" required>
+              </div>
+              <div class="text-end mt-3">
+                <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary mx-1">Añadir Proyecto</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalPutProy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Proyecto</h5>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+              <div class="form-group">
+                <label for="proyPicture" class="col-form-label">Imagen (link):</label>
+                <input type="text" class="form-control" id="proyPicture" name="proyPicture" [(ngModel)]="proyPut.picture" required>
+              </div>
+              <div class="form-group">
+                <label for="proyName" class="col-form-label">Nombre:</label>
+                <input type="text" class="form-control" id="proyName" name="proyName" [(ngModel)]="proyPut.name" required>
+              </div>
+              <div class="form-group">
+                <label for="proyDesc" class="col-form-label">Descripcion:</label>
+                <input type="text" class="form-control" id="proyDesc" name="proyDesc" [(ngModel)]="proyPut.description" required>
+              </div>
+              <div class="text-end mt-3">
+                <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary mx-1">Confirmar Cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
