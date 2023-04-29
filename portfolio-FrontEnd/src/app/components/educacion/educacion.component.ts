@@ -42,7 +42,15 @@ export class EducacionComponent implements OnInit {
     this.educacionService.postEducacion(educacion).subscribe(
       {
         next: (v) => console.log(v),
-        error: (e) => {alert("No se pudo agregar la educacion"); console.error(e);},
+        error: (e) => {          
+          if(JSON.stringify(e).length < 300){
+            alert('Campo/s vacios')
+          }
+          else{
+            alert('Una educación con ese nombre ya existe')
+          }
+          console.error(e);
+        },
         complete: () => {console.info('complete'); window.location.reload();}
       }
     )
@@ -57,7 +65,15 @@ export class EducacionComponent implements OnInit {
     this.educacionService.putEducacion(this.eduPut.id, this.eduPut).subscribe(
       {
         next: (v) => console.log(v),
-        error: (e) => {alert("No se pudo editar la educacion"); console.error(e);},
+        error: (e) => {          
+          if(JSON.stringify(e).length < 300){
+            alert('Campo/s vacios')
+          }
+          else{
+            alert('Una educación con ese nombre ya existe')
+          }
+          console.error(e);
+        },
         complete: () => {console.info('complete'); window.location.reload();}
       }
     )

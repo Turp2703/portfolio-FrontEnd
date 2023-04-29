@@ -42,7 +42,15 @@ export class ProyectosComponent implements OnInit {
     this.proyectosService.postProyecto(Proyecto).subscribe(
       {
         next: (v) => console.log(v),
-        error: (e) => {alert("No se pudo agregar el Proyecto"); console.error(e);},
+        error: (e) => {
+          if(JSON.stringify(e).length < 300){
+            alert('Campo/s vacios')
+          }
+          else{
+            alert('Un proyecto con ese nombre ya existe')
+          }
+          console.error(e);
+        },
         complete: () => {console.info('complete'); window.location.reload();}
       }
     )
@@ -57,7 +65,15 @@ export class ProyectosComponent implements OnInit {
     this.proyectosService.putProyecto(this.proyPut.id, this.proyPut).subscribe(
       {
         next: (v) => console.log(v),
-        error: (e) => {alert("No se pudo editar el Proyecto"); console.error(e);},
+        error: (e) => {
+          if(JSON.stringify(e).length < 300){
+            alert('Campo/s vacios')
+          }
+          else{
+            alert('Un proyecto con ese nombre ya existe')
+          }
+          console.error(e);
+        },
         complete: () => {console.info('complete'); window.location.reload();}
       }
     )

@@ -48,7 +48,15 @@ export class SkillsComponent implements OnInit{
     this.skillService.postSkill(skill).subscribe(
       {
         next: (v) => console.log(v),
-        error: (e) => {alert("No se pudo agregar la Skill"); console.error(e);},
+        error: (e) => {
+          if(JSON.stringify(e).length < 290){
+            alert('Campo/s vacios')
+          }
+          else{
+            alert('Una skill con ese nombre ya existe')
+          }
+          console.error(e);
+        },
         complete: () => {console.info('complete'); window.location.reload();}
       }
     )
@@ -69,7 +77,15 @@ export class SkillsComponent implements OnInit{
     this.skillService.putSkill(this.skillPut.id, this.skillPut).subscribe(
       {
         next: (v) => console.log(v),
-        error: (e) => {alert("No se pudo editar la Skill"); console.error(e);},
+        error: (e) => {          
+          if(JSON.stringify(e).length < 295){
+            alert('Campo/s vacios')
+          }
+          else{
+            alert('Una skill con ese nombre ya existe')
+          }
+          console.error(e);
+        },
         complete: () => {console.info('complete'); window.location.reload();}
       }
     )

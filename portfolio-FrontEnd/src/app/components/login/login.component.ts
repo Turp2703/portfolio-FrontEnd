@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit{
   userName!: string;
   password!: string;
   roles: string[] = [];
-  errMsg!: string;
 
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
@@ -32,19 +31,29 @@ export class LoginComponent implements OnInit{
   onLogin(): void{
     this.logInUser = new LogInUser(this.userName, this.password);
     
-    this.authService.logIn(this.logInUser).subscribe(data => {
-      this.isLogged = true;
-      this.isLoggedInFail = false;
-      this.tokenService.setToken(data.token);
-      this.tokenService.setUsername(data.userName);
-      this.tokenService.setAuthorities(data.authorities);
-      this.roles = data.authorities;
-      this.router.navigate(['']);
-    }, err => {
-      this.isLogged = false;
-      this.isLoggedInFail = true;
-      this.errMsg = err.error.message;
-      console.log(this.errMsg);
+    this.authService.logIn(this.logInUser).subscribe({
+      next: (v) => {
+        this.tokenService.setToken(v.token);
+        this.tokenService.setUsername(v.userName);
+        this.tokenService.setAuthorities(v.authorities);
+        this.roles = v.authorities;
+      },
+      error: (e) => {
+        this.isLogged = false;
+        this.isLoggedInFail = true;
+        if(JSON.stringify(e).length < 300){
+          alert('Campo/s vacios')
+        }
+        else{
+          alert('Usuario y/o Contraseña incorrecto/s')
+        }
+        console.error(e);;
+      },
+      complete: () => {
+        this.isLogged = true;
+        this.isLoggedInFail = false;
+        this.router.navigate(['']);
+      }
     })
   }
 }
