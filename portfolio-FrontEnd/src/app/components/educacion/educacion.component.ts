@@ -14,12 +14,19 @@ export class EducacionComponent implements OnInit {
   eduPost: mEducacion = new mEducacion('','','');
 
   constructor(private educacionService: EducacionService, private tokenService: TokenService) { }
-  
+    
   isLogged = false;
+  isAdmin = false;
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){
       this.isLogged = true;
+      if(this.tokenService.getAuthorities().length == 2){
+        this.isAdmin = true;
+      }
+      else{
+        this.isAdmin = false;
+      }
     }
     else{
       this.isLogged = false;

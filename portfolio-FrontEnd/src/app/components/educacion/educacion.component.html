@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div>
                 <h2 class="titulo">Educación
-                    <a class="btn btn-primary mx-1 text-white end" role="button" data-bs-toggle="modal" data-bs-target="#modalPostEdu" *ngIf="isLogged">
+                    <a class="btn btn-primary mx-1 text-white end" role="button" data-bs-toggle="modal" data-bs-target="#modalPostEdu" *ngIf="isAdmin">
                         AÑADIR
                     </a>
                 </h2>
@@ -12,10 +12,10 @@
                 <img [src]="educacion.picture" class="img-thumbnail" [alt]="educacion.title">
                 <h5>{{educacion.title}}</h5>
                 <p>{{educacion.origin}}</p>
-                <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutEdu" (click)="putIndex(educacion.id)" *ngIf="isLogged">
+                <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutEdu" (click)="putIndex(educacion.id)" *ngIf="isAdmin">
                     EDITAR
                 </a>
-                <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(educacion.id)" *ngIf="isLogged">
+                <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(educacion.id)" *ngIf="isAdmin">
                     BORRAR
                 </a>
             </div>

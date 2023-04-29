@@ -2,7 +2,7 @@
     <div class="container-flex p-3">
         <div class="row p-0 justify-content-center">
             <h2 class="titulo">Proyectos
-                <a class="btn btn-primary mx-1 text-white end" role="button" data-bs-toggle="modal" data-bs-target="#modalPostProy" *ngIf="isLogged">
+                <a class="btn btn-primary mx-1 text-white end" role="button" data-bs-toggle="modal" data-bs-target="#modalPostProy" *ngIf="isAdmin">
                     AÑADIR
                 </a>
             </h2>
@@ -10,10 +10,10 @@
                 <img [src]="proyecto.picture" class="img-thumbnail" [alt]="proyecto.name">
                 <h5>{{proyecto.name}}</h5>
                 <p>{{proyecto.description}}</p>
-                <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutProy" (click)="putIndex(proyecto.id)" *ngIf="isLogged">
+                <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutProy" (click)="putIndex(proyecto.id)" *ngIf="isAdmin">
                     EDITAR
                 </a>
-                <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(proyecto.id)" *ngIf="isLogged">
+                <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(proyecto.id)" *ngIf="isAdmin">
                     BORRAR
                 </a>
             </div>

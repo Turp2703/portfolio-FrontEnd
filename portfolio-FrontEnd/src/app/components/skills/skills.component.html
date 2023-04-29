@@ -2,16 +2,16 @@
     <div class="container-flex p-3">
         <div class="row justify-content-center">
             <h2 class="titulo">Hard Skills | Soft Skills
-                <a class="btn btn-primary mx-1 text-white end" role="button" data-bs-toggle="modal" data-bs-target="#modalPostSkill" *ngIf="isLogged">
+                <a class="btn btn-primary mx-1 text-white end" role="button" data-bs-toggle="modal" data-bs-target="#modalPostSkill" *ngIf="isAdmin">
                     AÑADIR
                 </a>
             </h2>
             <div class="col-md-12 col-lg-6 pt-3" *ngFor="let skill of skillsList">
                 <h4>{{skill.name}}
-                    <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutSkill" (click)="putIndex(skill.id)" *ngIf="isLogged">
+                    <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutSkill" (click)="putIndex(skill.id)" *ngIf="isAdmin">
                         EDITAR
                     </a>
-                    <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(skill.id)" *ngIf="isLogged">
+                    <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(skill.id)" *ngIf="isAdmin">
                         BORRAR
                     </a>
                 </h4>
