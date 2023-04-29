@@ -4,7 +4,7 @@
             <h2>Experiencia</h2>
         </div>
         <div class="col-12 col-sm-7 text-end">
-            <a class="btn btn-primary mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPost" *ngIf="isLogged">
+            <a class="btn btn-primary mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPostExp" *ngIf="isLogged">
                 AÑADIR
             </a>
             <a class="btn btn-secondary mx-1" href="#carouselExperiencias" role="button" data-bs-slide="prev">
@@ -27,7 +27,7 @@
                             <div class="mx-3">
                                 <h4>{{experiencia.name}}</h4>
                                 <p>{{experiencia.place}}</p>
-                                <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPut" (click)="putIndex(experiencia.id)" *ngIf="isLogged">
+                                <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutExp" (click)="putIndex(experiencia.id)" *ngIf="isLogged">
                                     EDITAR
                                 </a>
                                 <a class="btn btn-danger mx-1 text-white" role="button" (click)="onDelete(experiencia.id)" *ngIf="isLogged">
@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalPostExp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -74,7 +74,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="modalPut" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalPutExp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">

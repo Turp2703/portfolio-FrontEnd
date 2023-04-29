@@ -12,10 +12,23 @@ export class EducacionService {
 
   constructor(private http: HttpClient) { }
 
-  public getEducacion(): Observable<mEducacion>{
-    return this.http.get<mEducacion>(this.URL + 'get/main');
+  public getEducacion(id: number): Observable<mEducacion>{
+    return this.http.get<mEducacion>(this.URL + `get/${id}`);
   }
+
   public getEducacionList() {
     return this.http.get<mEducacion>(this.URL + 'get');
+  }
+
+  public postEducacion(educacion: mEducacion): Observable<any>{
+    return this.http.post<any>(this.URL + 'post', educacion)
+  }
+
+  public putEducacion(id: number, educacion: mEducacion): Observable<any>{
+    return this.http.put<any>(this.URL + `put/${id}`, educacion);
+  }
+
+  public deleteEducacion(id: number): Observable<any>{
+    return this.http.delete<any>(this.URL + `delete/${id}`);
   }
 }

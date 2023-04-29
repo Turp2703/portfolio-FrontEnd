@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { mExperiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -14,7 +13,7 @@ export class ExperienciaComponent implements OnInit{
   expPut: mExperiencia = new mExperiencia('','','');
   expPost: mExperiencia = new mExperiencia('','','');
 
-  constructor(private experienciaService: ExperienciaService, private tokenService: TokenService, private router: Router) { }
+  constructor(private experienciaService: ExperienciaService, private tokenService: TokenService) { }
   
   isLogged = false;
 
