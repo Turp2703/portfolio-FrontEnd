@@ -8,7 +8,7 @@ import { mProfile } from '../model/profile.model';
 })
 export class ProfileService {
 
-  URL = 'http://localhost:8080/profile/';
+  URL = 'https://rueda-portfolio-backend.onrender.com/profile/';
 
   constructor(private http: HttpClient) { }
 

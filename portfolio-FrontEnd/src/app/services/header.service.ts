@@ -8,7 +8,7 @@ import { mHeader } from '../model/header.model';
 })
 export class HeaderService {
 
-  URL = 'http://localhost:8080/header/';
+  URL = 'https://rueda-portfolio-backend.onrender.com/header/';
 
   constructor(private http: HttpClient) { }
 

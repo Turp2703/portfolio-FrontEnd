@@ -8,7 +8,7 @@ import { mSkill } from '../model/skill.model';
 })
 export class SkillsService {
 
-  URL = 'http://localhost:8080/skill/';
+  URL = 'https://rueda-portfolio-backend.onrender.com/skill/';
 
   constructor(private http: HttpClient) { }
 

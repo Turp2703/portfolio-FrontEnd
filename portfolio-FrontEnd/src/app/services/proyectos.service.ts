@@ -8,7 +8,7 @@ import { mProyecto } from '../model/proyecto.model';
 })
 export class ProyectosService {
 
-  URL = 'http://localhost:8080/proyecto/';
+  URL = 'https://rueda-portfolio-backend.onrender.com/proyecto/';
 
   constructor(private http: HttpClient) { }
 

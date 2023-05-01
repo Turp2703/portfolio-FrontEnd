@@ -8,7 +8,7 @@ import { mAcercaDe } from '../model/acercaDe.model';
 })
 export class AcercaDeService {
 
-  URL = 'http://localhost:8080/acercaDe/';
+  URL = 'https://rueda-portfolio-backend.onrender.com/acercaDe/';
 
   constructor(private http: HttpClient) { }
 

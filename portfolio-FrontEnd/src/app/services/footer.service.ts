@@ -8,7 +8,7 @@ import { mFooter } from '../model/footer.model';
 })
 export class FooterService {
 
-  URL = 'http://localhost:8080/footer/';
+  URL = 'https://rueda-portfolio-backend.onrender.com/footer/';
 
   constructor(private http: HttpClient) { }
 
