@@ -10,8 +10,8 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class EducacionComponent implements OnInit {
   educacionList: any;
-  eduPut: mEducacion = new mEducacion('','','');
-  eduPost: mEducacion = new mEducacion('','','');
+  eduPut: mEducacion = new mEducacion('','','','');
+  eduPost: mEducacion = new mEducacion('','','','');
 
   constructor(private educacionService: EducacionService, private tokenService: TokenService) { }
     
@@ -38,7 +38,7 @@ export class EducacionComponent implements OnInit {
   }
 
   onCreate(): void{
-    const educacion = new mEducacion(this.eduPost.picture, this.eduPost.title, this.eduPost.origin);
+    const educacion = new mEducacion(this.eduPost.picture, this.eduPost.title, this.eduPost.origin, this.eduPost.year);
     this.educacionService.postEducacion(educacion).subscribe(
       {
         next: (v) => console.log(v),

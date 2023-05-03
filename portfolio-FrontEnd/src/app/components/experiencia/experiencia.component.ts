@@ -10,8 +10,8 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class ExperienciaComponent implements OnInit{
   experienciasList: any;
-  expPut: mExperiencia = new mExperiencia('','','');
-  expPost: mExperiencia = new mExperiencia('','','');
+  expPut: mExperiencia = new mExperiencia('','','','','');
+  expPost: mExperiencia = new mExperiencia('','','','','');
 
   constructor(private experienciaService: ExperienciaService, private tokenService: TokenService) { }
     
@@ -38,11 +38,11 @@ export class ExperienciaComponent implements OnInit{
   }
 
   onCreate(): void{
-    const experiencia = new mExperiencia(this.expPost.logo, this.expPost.name, this.expPost.place);
+    const experiencia = new mExperiencia(this.expPost.logo, this.expPost.name, this.expPost.place, this.expPost.periodStart, this.expPost.periodEnd);
     this.experienciaService.postExperiencia(experiencia).subscribe(
       {
         next: (v) => console.log(v),
-        error: (e) => {          
+        error: (e) => {
           if(JSON.stringify(e).length < 300){
             alert('Campo/s vacios')
           }

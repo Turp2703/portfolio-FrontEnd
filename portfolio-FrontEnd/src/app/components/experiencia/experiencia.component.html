@@ -27,6 +27,8 @@
                             <div class="mx-3">
                                 <h4>{{experiencia.name}}</h4>
                                 <p>{{experiencia.place}}</p>
+                                <p>Desde {{experiencia.periodStart}}</p>
+                                <p>Hasta {{experiencia.periodEnd}}</p>
                                 <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutExp" (click)="putIndex(experiencia.id)" *ngIf="isAdmin">
                                     EDITAR
                                 </a>
@@ -64,6 +66,14 @@
                 <label for="expPlace" class="col-form-label">Lugar:</label>
                 <input type="text" class="form-control" id="expPlace" name="expPlace" [(ngModel)]="expPost.place" required>
               </div>
+              <div class="form-group">
+                <label for="expPeriodStart" class="col-form-label">Desde:</label>
+                <input type="date" class="form-control" id="expPeriodStart" name="expPeriodStart" onkeydown="return false" [max]="expPost.periodEnd" [(ngModel)]="expPost.periodStart" required>
+              </div>
+              <div class="form-group" *ngIf="expPost.periodStart != ''">
+                <label for="expPeriodEnd" class="col-form-label">Hasta:</label>
+                <input type="date" class="form-control" id="expPeriodEnd" name="expPeriodEnd" onkeydown="return false" [min]="expPost.periodStart" [(ngModel)]="expPost.periodEnd" required>
+              </div>
               <div class="text-end mt-3">
                 <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
                 <button type="submit" class="btn btn-primary mx-1">Añadir Experiencia</button>
@@ -93,6 +103,14 @@
               <div class="form-group">
                 <label for="expPlace" class="col-form-label">Lugar:</label>
                 <input type="text" class="form-control" id="expPlace" name="expPlace" [(ngModel)]="expPut.place" required>
+              </div>
+              <div class="form-group">
+                <label for="expPeriodStart" class="col-form-label">Desde:</label>
+                <input type="date" class="form-control" id="expPeriodStart" name="expPeriodStart" onkeydown="return false" [max]="expPut.periodEnd" [(ngModel)]="expPut.periodStart" required>
+              </div>
+              <div class="form-group" *ngIf="expPut.periodStart != ''">
+                <label for="expPeriodEnd" class="col-form-label">Hasta:</label>
+                <input type="date" class="form-control" id="expPeriodEnd" name="expPeriodEnd" onkeydown="return false" [min]="expPut.periodStart" [(ngModel)]="expPut.periodEnd" required>
               </div>
               <div class="text-end mt-3">
                 <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>

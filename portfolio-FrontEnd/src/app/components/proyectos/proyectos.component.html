@@ -10,6 +10,7 @@
                 <img [src]="proyecto.picture" class="img-thumbnail" [alt]="proyecto.name">
                 <h5>{{proyecto.name}}</h5>
                 <p>{{proyecto.description}}</p>
+                <a *ngIf="proyecto.link != null" [href]="proyecto.link"> <p>GITHUB</p> </a>
                 <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutProy" (click)="putIndex(proyecto.id)" *ngIf="isAdmin">
                     EDITAR
                 </a>

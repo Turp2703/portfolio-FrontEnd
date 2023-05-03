@@ -10,8 +10,8 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class ProyectosComponent implements OnInit {
   proyectosList: any;
-  proyPut: mProyecto = new mProyecto('','','');
-  proyPost: mProyecto = new mProyecto('','','');
+  proyPut: mProyecto = new mProyecto('','','','');
+  proyPost: mProyecto = new mProyecto('','','','');
 
   constructor(private proyectosService: ProyectosService, private tokenService: TokenService) { }
     
@@ -38,7 +38,7 @@ export class ProyectosComponent implements OnInit {
   }
   
   onCreate(): void{
-    const Proyecto = new mProyecto(this.proyPost.picture, this.proyPost.name, this.proyPost.description);
+    const Proyecto = new mProyecto(this.proyPost.picture, this.proyPost.name, this.proyPost.description, this.proyPost.link);
     this.proyectosService.postProyecto(Proyecto).subscribe(
       {
         next: (v) => console.log(v),

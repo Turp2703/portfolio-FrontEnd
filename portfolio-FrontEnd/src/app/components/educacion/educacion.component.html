@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-12 col-lg-6 mt-3 text-center" *ngFor="let educacion of educacionList">
                 <img [src]="educacion.picture" class="img-thumbnail" [alt]="educacion.title">
-                <h5>{{educacion.title}}</h5>
+                <h5>{{educacion.title}} ({{educacion.year}})</h5>
                 <p>{{educacion.origin}}</p>
                 <a class="btn btn-info mx-1 text-white" role="button" data-bs-toggle="modal" data-bs-target="#modalPutEdu" (click)="putIndex(educacion.id)" *ngIf="isAdmin">
                     EDITAR
@@ -43,6 +43,10 @@
                 <label for="eduOrigin" class="col-form-label">Origen:</label>
                 <input type="text" class="form-control" id="eduOrigin" name="eduOrigin" [(ngModel)]="eduPost.origin" required>
               </div>
+              <div class="form-group">
+                <label for="eduYear" class="col-form-label">Año:</label>
+                <input type="number" class="form-control" id="eduYear" name="eduYear" [(ngModel)]="eduPost.year" required>
+              </div>
               <div class="text-end mt-3">
                 <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
                 <button type="submit" class="btn btn-primary mx-1">Añadir Educacion</button>
@@ -72,6 +76,10 @@
               <div class="form-group">
                 <label for="eduOrigin" class="col-form-label">Origen:</label>
                 <input type="text" class="form-control" id="eduOrigin" name="eduOrigin" [(ngModel)]="eduPut.origin" required>
+              </div>
+              <div class="form-group">
+                <label for="eduYear" class="col-form-label">Año:</label>
+                <input type="number" class="form-control" id="eduYear" name="eduYear" [(ngModel)]="eduPut.year" required>
               </div>
               <div class="text-end mt-3">
                 <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal">Cerrar</button>
