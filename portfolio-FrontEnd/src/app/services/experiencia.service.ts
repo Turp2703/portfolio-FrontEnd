@@ -8,8 +8,8 @@ import { mExperiencia } from '../model/experiencia.model';
 })
 export class ExperienciaService {
 
-  //URL = 'https://rueda-portfolio-backend.onrender.com/experiencia/';
-  URL = 'http://localhost:8080/experiencia/';
+  URL = 'https://rueda-portfolio-backend.onrender.com/experiencia/';
+  // URL = 'http://localhost:8080/experiencia/';
 
   constructor(private http: HttpClient) { }
 

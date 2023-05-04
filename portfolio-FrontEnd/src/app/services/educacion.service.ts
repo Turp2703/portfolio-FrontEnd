@@ -8,8 +8,8 @@ import { mEducacion } from '../model/educacion.model';
 })
 export class EducacionService {
 
-  //URL = 'https://rueda-portfolio-backend.onrender.com/educacion/';
-  URL = 'http://localhost:8080/educacion/';
+  URL = 'https://rueda-portfolio-backend.onrender.com/educacion/';
+  // URL = 'http://localhost:8080/educacion/';
 
   constructor(private http: HttpClient) { }
 

@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  //authURL = 'https://rueda-portfolio-backend.onrender.com/auth/'
-  authURL = 'http://localhost:8080/auth/'
+  authURL = 'https://rueda-portfolio-backend.onrender.com/auth/'
+  // authURL = 'http://localhost:8080/auth/'
 
   constructor(private httpClient: HttpClient) { }
 
